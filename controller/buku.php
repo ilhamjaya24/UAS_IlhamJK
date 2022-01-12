@@ -29,17 +29,17 @@ class buku{
 	 	return $buku;
 	 }
 	 function getJenisData(){
-	 	// $jb = $this->model->getJenisData();
-	 	// return $jb;
+	 	$jb = $this->model->getJenisData();
+	 	return $jb;
 
 	 	$jenis_buku = $this->model->getJenisData();
 		echo json_encode($jenis_buku);
 	 }
-	 function hapusBuku(){
+	 function hapusBuku($id){
 	 	if (isset($_POST['delete'])) {
 	 		$id = $_POST['id'];
 	 		
-	 		$result = $this->model->hapusData($id);
+	 		$result = $this->model-> hapusData($id);
 
 	 		if ($result) {
 	 			header("Location:content.php?pesan=success&frm=del");

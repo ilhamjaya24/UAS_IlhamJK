@@ -86,7 +86,7 @@ class buku_model{
 		return $row->execute();
 	}
 	function hapusData($id){
-		$sql = "DELETE FROM tbl_buku where id = ?";
+		$sql = "DELETE FROM tbl_buku WHERE id = :id";
 		$row = $this->db->prepare($sql);
 		return $row -> execute(array($id));
 	}
